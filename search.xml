@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[更换电脑后移植hexo]]></title>
+    <url>%2F2017%2F12%2F12%2F%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E7%A7%BB%E6%A4%8Dhexo%2F</url>
+    <content type="text"><![CDATA[更换电脑后移植hexo1. 拷贝原主机上的目录下几个文件或文件夹（无需拷贝全部文件） config.ymlscaffoldspackage.jsonsourcethemes 2.在新电脑上建立hexo文件夹，将上述文件拷贝进来3.新电脑上配置好hexo环境：nodejs,nvm控制版本4.安装hexo，执行命令：npm install -g hexo 5.进入hexo文件夹，执行模块安装命令:1234npm installnpm install hexo-deployer-git --savenpm install hexo-generator-feed --savenpm install hexo-generator-sitemap --save 6.部署执行命令:12hexo ghexo deploy]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F12%2F11%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ss安装配置]]></title>
+    <url>%2F2017%2F08%2F24%2Fss%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[ss安装与使用操作系统 ubuntu 16.04 安装ss1 需要有python环境和pip2 安装ss1sudo pip install shadowsocks 配置ss服务器ss有两种配置方式，一种是直接命令行配置，另一种是写入文件可以查看ss帮助文档1sslocal -help 1 命令行1sslocal -s 8.8.8.8 -p 8848 -k &quot;your password&quot; -b 127.0.0.1 -l 1080 参数说明：-s : 后面跟服务器ip-p : 服务器端口-k : 密码-b : 本地ip-l : 本地端口 2 配置文件新建.json文件 1touch ssss.json /home/../../ 编辑json文件123456789&#123; &quot;server&quot;:&quot;8.8.8.8&quot;, &quot;server_port&quot;:8848, &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;password&quot;:&quot;yourpasswd&quot;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;aes-256-cfb&quot;&#125; 配置参数信息同上命令行说明 保存配置文件后执行命令1sslocal -c /home/../../ssss.json 配置代理使用1 全局模式即在网络设置中选择网络代理-手动 然后将ip、端口配置好 2 PAC需安装genpac1sudo pip install genpac 运行命令1genpac --proxy=&quot;SOCKS5 127.0.0.1:1080&quot; --gfwlist-proxy=&quot;SOCKS5 127.0.0.1:1080&quot; -o autoproxy.pac --gfwlist-url=&quot;https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt&quot; 当前目录生成一个pac网络设置中选择网络代理-手动-将上述pac文件目录填入url中-应用到整个系统 ss安装配置完毕]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[git使用教程]]></title>
+    <url>%2F2017%2F08%2F04%2Fgit%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[配置git git config –global user.name “github用户名”git config –global user.email “github邮箱地址” 一、上传到github 建立仓库github上Create a new repository 本地建立目录，与仓库命名一致 cd到目录内 初始化git init 修改本地仓库 例如touch Readmegit add Readmegit commit -m ‘说明文字’git remote add origin https://github.com/github用户名/github仓库.gitgit push origin master 二、clone到本地 git clone https://github.com/github用户名/github仓库名.git 如需修改添加可按如上步骤操作注：有时，在执行git push origin master时，报错：error:failed to push som refs to…….，可执行 git pull origin master]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[python pyinstaller学习]]></title>
+    <url>%2F2017%2F07%2F11%2Fpython-pyinstaller%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[pip安装PyInstaller： pip install pyinstaller 最简单的打包命令pyinstaller projcet.py 外带参数说明：-F 生成单个可执行文件-p 自己定义需加载的类路径-i 后跟图标路径指定图标-w 去掉控制台窗口，在GUI界面使用]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[HeXo 命令教程]]></title>
+    <url>%2F2017%2F04%2F24%2FHeXo%2F</url>
+    <content type="text"><![CDATA[部署步骤 每次部署的步骤，可按以下三步来进行。 hexo clean hexo generate hexo deploy 常用命令 hexo new”postName” #新建文章 hexo new page”pageName” #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server） hexo deploy #将.deploy目录部署到GitHub hexo help # 查看帮助 hexo version #查看Hexo的版本]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello Noobxx]]></title>
+    <url>%2F2017%2F04%2F21%2FHello-Noobxx%2F</url>
+    <content type="text"><![CDATA[Hello Noobxx!Start from zero.]]></content>
+  </entry>
+</search>
