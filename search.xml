@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[docker搭建centos+Apache+Struts2-045环境]]></title>
+    <url>%2F2018%2F01%2F30%2Fdocker%E6%90%AD%E5%BB%BAcentos-Apache-Struts2-045%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[docker搭建centos+Apache+Struts2-045环境安装docker生成容器1234yum install dockerdocker search centosdocker pull centosdocker run -it --name struts2 -p 8088:8080 centos #将容器8080端口映射到主机的8088端口 安装java环境+Apache-tomcat1234567yum install java-1.8.0-openjdkyum install wgetwget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.2/bin/apache-tomcat-9.0.2.tar.gztar xvf apache-tomcat-9.0.2.tar.gzcd apache-tomcat-9.0.2./bin/startup.shcurl localhost:8080 下载存在s2-045漏洞的版本并部署1234567wget http://archive.apache.org/dist/struts/binaries/struts-2.3.12-all.zipyum install unzip zipunzip struts-2.3.12-all.zipcd struts-2.3.12cp /apache-tomcat-9.0.2/struts-2.3.12/apps/struts2-showcase.war /apache-tomcat-9.0.2/webapps/struts22312.war./bin/shutdown.sh./bin/startup.sh 部署成功，PoC测试成功访问1http://127.0.0.1:8088/struts22312/showcase.action 制作镜像12docker commit id st2-045:1.0docker save -o st2-045 st2-045:1.0]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[更换电脑后移植hexo]]></title>
     <url>%2F2017%2F12%2F12%2F%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E7%A7%BB%E6%A4%8Dhexo%2F</url>
     <content type="text"><![CDATA[更换电脑后移植hexo1. 拷贝原主机上的目录下几个文件或文件夹（无需拷贝全部文件） config.ymlscaffoldspackage.jsonsourcethemes 2.在新电脑上建立hexo文件夹，将上述文件拷贝进来3.新电脑上配置好hexo环境：nodejs,nvm控制版本4.安装hexo，执行命令：npm install -g hexo 5.进入hexo文件夹，执行模块安装命令:1234npm installnpm install hexo-deployer-git --savenpm install hexo-generator-feed --savenpm install hexo-generator-sitemap --save 6.部署执行命令:12hexo ghexo deploy]]></content>
