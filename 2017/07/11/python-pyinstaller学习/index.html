@@ -75,20 +75,42 @@
 
 
 
-<meta name="description" content="docker搭建centos+Apache+Struts2-045环境安装docker生成容器1234yum install dockerdocker search centosdocker pull centosdocker run -it --name struts2 -p 8088:8080 centos #将容器8080端口映射到主机的8088端口 安装java环境+Apache-tomc">
+<meta name="description" content="转自freebuf1http://www.freebuf.com/articles/web/162822.html 前言每周我们都能听到或看到许多关于安全漏洞的预警或报告，虽然看上去大多数的漏洞都千篇一律，但对于我们渗透测试人员而言，其中的一些思路方法和利用点却尤为吸引我们的眼球。最近，知名的内容管理系统Joomla！就被曝出了存在二阶SQL注入漏洞。这里有一篇博文的分析大家可以看看：https:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker搭建centos+Apache+Struts2-045环境">
-<meta property="og:url" content="http://noobxx.com/2018/01/30/docker搭建centos-Apache-Struts2-045环境/index.html">
+<meta property="og:title" content="SQL二阶注入例子">
+<meta property="og:url" content="http://noobxx.com/2018/02/26/SQL二阶注入例子/index.html">
 <meta property="og:site_name" content="NoobXX">
-<meta property="og:description" content="docker搭建centos+Apache+Struts2-045环境安装docker生成容器1234yum install dockerdocker search centosdocker pull centosdocker run -it --name struts2 -p 8088:8080 centos #将容器8080端口映射到主机的8088端口 安装java环境+Apache-tomc">
+<meta property="og:description" content="转自freebuf1http://www.freebuf.com/articles/web/162822.html 前言每周我们都能听到或看到许多关于安全漏洞的预警或报告，虽然看上去大多数的漏洞都千篇一律，但对于我们渗透测试人员而言，其中的一些思路方法和利用点却尤为吸引我们的眼球。最近，知名的内容管理系统Joomla！就被曝出了存在二阶SQL注入漏洞。这里有一篇博文的分析大家可以看看：https:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://i2.bvimg.com/630364/cbf68a4b2adf0d23.png">
-<meta property="og:image" content="http://i2.bvimg.com/630364/06eb818b429f806f.png">
-<meta property="og:updated_time" content="2018-01-30T06:48:44.662Z">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183195566495.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183195767307.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183195933483.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183196133632.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183196375903.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183196589726.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/1518319678165.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/1518319698585.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183197265557.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183197528085.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183197759624.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183197999667.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183198266588.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183198582649.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183198805729.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/1518319914256.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/1518319942451.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183199941485.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183200185096.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/1518320049677.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183200756767.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183201062429.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183201322252.png">
+<meta property="og:image" content="http://image.3001.net/images/20180211/15183201598769.png">
+<meta property="og:updated_time" content="2018-02-26T03:02:35.253Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker搭建centos+Apache+Struts2-045环境">
-<meta name="twitter:description" content="docker搭建centos+Apache+Struts2-045环境安装docker生成容器1234yum install dockerdocker search centosdocker pull centosdocker run -it --name struts2 -p 8088:8080 centos #将容器8080端口映射到主机的8088端口 安装java环境+Apache-tomc">
-<meta name="twitter:image" content="http://i2.bvimg.com/630364/cbf68a4b2adf0d23.png">
+<meta name="twitter:title" content="SQL二阶注入例子">
+<meta name="twitter:description" content="转自freebuf1http://www.freebuf.com/articles/web/162822.html 前言每周我们都能听到或看到许多关于安全漏洞的预警或报告，虽然看上去大多数的漏洞都千篇一律，但对于我们渗透测试人员而言，其中的一些思路方法和利用点却尤为吸引我们的眼球。最近，知名的内容管理系统Joomla！就被曝出了存在二阶SQL注入漏洞。这里有一篇博文的分析大家可以看看：https:">
+<meta name="twitter:image" content="http://image.3001.net/images/20180211/15183195566495.png">
 
 
 
@@ -120,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="http://noobxx.com/2018/01/30/docker搭建centos-Apache-Struts2-045环境/"/>
+  <link rel="canonical" href="http://noobxx.com/2018/02/26/SQL二阶注入例子/"/>
 
 
 
@@ -464,7 +486,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
